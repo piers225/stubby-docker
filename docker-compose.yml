@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  app:
+    image: stubby:latest
+    ports:
+      - 5355:53/tcp
+      - 5355:53/udp
