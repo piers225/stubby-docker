@@ -1,9 +1,10 @@
 # stubby-docker
-This project is for building a container with the stubby dns service on. It relys on the Docker tookit to work.
+
+This project is for building a container with the stubby dns service in, without having to checkout the project and build it. It relys on the Docker tookit.
 
 These files have been tested on rasberian (bullseye), but should work on any OS
 
-# Prerequisits 
+## Prerequisites 
 
 Install docker-io and docker-compose.
 
@@ -28,3 +29,8 @@ First build the image using
 Next run, 
 
 ` sudo docker-compose up -d ` 
+
+
+## Thank you 
+
+https://github.com/getdnsapi/stubby/
