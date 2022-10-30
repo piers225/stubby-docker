@@ -1,17 +1,18 @@
 FROM ubuntu:20.04
 
-RUN groupadd -r myuser && useradd -r -g myuser myuser
-
 RUN \
   apt-get update && \
-  apt-get -y --no-install-recommends install \
+  apt-get -y install \
+    openssl \
+    ca-certificates \
     stubby \
   && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/
 
-COPY stubby.yml /usr/local/etc/stubby/stubby.yml
+COPY stubby.yml /etc/stubby/stubby.yml
 
-USER myuser
+EXPOSE 5355/udp
+EXPOSE 5355/tcp
 
 ENTRYPOINT [ "stubby" ]
